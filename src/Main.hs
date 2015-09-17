@@ -24,4 +24,4 @@ import Cat
 
 main :: IO ()
 main =
-  Cat.cat "text.txt"
+  Cat.cat

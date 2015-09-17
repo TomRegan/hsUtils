@@ -20,7 +20,14 @@ limitations under the License.
 
 module Cat where
 
-cat :: String -> IO ()
-cat n =
-  do f <- readFile n
-     putStrLn f
+import System.Environment
+
+cat :: IO ()
+cat = do
+        (filename:_) <- getArgs
+        Cat.read filename
+
+read :: String -> IO ()
+read n = do
+         f <- readFile n
+         putStr f
